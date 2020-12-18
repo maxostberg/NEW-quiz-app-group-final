@@ -1,0 +1,132 @@
+.home-container{
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+}
+
+#home{
+  max-width: 100rem;
+  margin: auto ;
+  padding: 10rem 0 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ========== Play Btn ========== */
+
+.play-btn{
+  position: relative;
+  transition: 0.4s;
+}
+
+.play-btn:hover::before{
+  content: "";
+  position: absolute;
+  top: 2.2rem;
+  border-top: 1.5rem solid transparent;
+  border-bottom: 1.5rem solid transparent;
+  left: 100%;
+  border-left: 5rem solid var(--primary-green-clr);
+  transform: translate(100ms);
+}
+
+.play-btn:hover::after{
+  content: "";
+  position: absolute;
+  top: 3.6rem;
+  width: 100%;
+  height: 0.2rem;
+  left: 110%;
+  background: linear-gradient(260deg, rgba(20,214,154,0) 57%, var(--primary-green-clr) 100%);
+  transform: translate(100ms);
+}
+
+/* ========== Scores Btn ========== */
+
+.scores-btn{
+  position: relative;
+  transition: 0.4s;
+}
+
+.scores-btn:hover::before{
+  content: "";
+  position: absolute;
+  top: 2.2rem;
+  border-top: 1.5rem solid transparent;
+  border-bottom: 1.5rem solid transparent;
+  right: 100%;
+  border-right: 5rem solid var(--primary-green-clr);
+  transform: translate(100ms);
+}
+
+.scores-btn:hover::after{
+  content: "";
+  position: absolute;
+  top: 3.6rem;
+  width: 100%;
+  height: 0.2rem;
+  right: 110%;
+  background: linear-gradient(90deg, rgba(20,214,154,0) 57%, var(--primary-green-clr) 100%);
+  transform: translate(100ms);
+}
+
+.fa-crown, .fa-play {
+  padding-left: 0.9rem;
+  font-size: 2.5rem;
+}
+
+/* ========== Dropdown ========== */
+
+.dropdown{
+  display: none;
+  list-style: none;
+  cursor: pointer;
+}
+
+.level-items{
+  width: 30rem;
+  padding: 2rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.easy-item{
+  border-bottom: 0.1rem solid var(--primary-green-clr);
+}
+
+.medium-item{
+  border-bottom: 0.1rem solid var(--primary-green-clr);
+}
+
+a{
+  text-decoration: none;
+  color: var(--text-clr);
+}
+
+.link-item:hover{
+  text-shadow: 4px 4px 7px var(--primary-green-clr);
+ 
+}
+
+@media screen and (max-width: 420px){
+  #home{
+    padding: 5rem 0 5rem;
+  }
+
+  .play-btn:hover::before{
+    display: none;
+  }
+  
+  .play-btn:hover::after{
+    display: none;
+  }
+
+  .scores-btn:hover::before{
+    display: none;
+  }
+  
+  .scores-btn:hover::after{
+    display: none;
+  }
+}

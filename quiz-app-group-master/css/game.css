@@ -1,0 +1,270 @@
+/* ========== Main Container ========== */
+.main-container {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  background: linear-gradient(180deg, rgba(0,0,0,1) 50%, rgba(41,43,45,1) 80%, rgba(111,118,120,1) 100%);
+}
+
+/* ========== Game Container ========== */
+.game-container{
+  max-width: 100rem;
+  margin: auto ;
+  padding: 5rem 0 5rem;
+}
+
+/* ========== Heads of Display ========== */
+#hud {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+  padding: 3rem;
+}
+
+/* -------- Heads of Display -------- */
+.time-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* -------- Timer/Score -------- */
+.hud-prefix {
+  font-size: 1.8rem;
+  letter-spacing: 0.2rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.hud-main-text {
+  text-align: center;
+}
+
+/* -------- ProgressBar -------- */
+#progressBar {
+  width: 25rem;
+  height: 2.3rem;
+  margin-top: 2rem;
+  padding: .2rem;
+  border-radius: 5rem;
+  border: 0.2rem solid var(--primary-green-clr);
+  overflow: hidden;
+}
+
+#progressBarFull {
+  width: 0%;
+  height: 100%;
+  border-radius: 5rem;
+  background-color: var(--primary-green-clr);
+}
+
+/* ========== Category & question ========== */
+
+.question-container{
+  width: 100%; 
+  min-height: 15rem;
+  display: flex;
+  align-items: center;
+}
+
+.category{
+  margin-bottom: 3rem;
+  font-size: 1.6rem;
+  letter-spacing: .4rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.ques{
+  width: 80%;
+  margin: 0 auto 5rem;
+  text-align: center;
+  font-size: 3.5rem;
+}
+
+/* ========== Choice Container ========== */
+
+.choice-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 2rem;
+  /* padding: 2rem; */
+  font-size: 2rem;
+  border-radius: 1rem;
+  border: 0.1rem solid var(--primary-green-clr);
+  box-shadow: 2px 2px 10px var(--shadow), inset 2px 2px 5px var(--primary-green-clr);
+  transition: 0.3s;
+}
+
+.choice-container:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+  transform: translate(100ms);
+}
+
+.choice-top{
+  display: flex;
+}
+
+.chioce-bottom{
+  display: flex; 
+}
+
+.choice-prefix {
+  margin-right: 2rem;
+  padding: 1rem 1.5rem;
+  border-radius: 50%;
+  box-shadow: 2px 2px 5px var(--shadow), inset 2px 2px 5px var(--primary-green-clr);
+  position: absolute;
+  top: 25%;
+  left: 1rem;
+}
+
+.choice-text {
+  letter-spacing: 0.1rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  /* background-color:white; */
+  padding: 3rem .5rem 3rem 6rem;
+  position: relative;
+}
+
+/* ----- Right or wrong response ----- */
+
+.correct {
+  background-color: var(--primary-green-clr);
+}
+
+.incorrect {
+  border: 1px solid rgb(156, 13, 8);
+  box-shadow: 2px 2px 5px var(--shadow), inset 2px 2px 5px rgb(156, 13, 8);
+  background-color: rgb(156, 13, 8);
+}
+
+/* ===== Before & After effects on alternative boxes ===== */
+
+/* ----- Before triangle ----- */
+.A::before, .B::before, .C::before, .D::before{
+  content: "";
+  position: absolute;
+  top: 2.6rem;
+  border-top: 1.5rem solid transparent;
+  border-bottom: 1.5rem solid transparent;
+}
+
+.A::before, .C::before{
+  right: 100%;
+  border-right: 5rem solid var(--primary-green-clr);
+} 
+
+.B::before, .D::before{
+  left: 100%;
+  border-left: 5rem solid var(--primary-green-clr);
+} 
+
+/* ----- After line ----- */
+.A::after, .B::after, .C::after, .D::after{
+  content: "";
+  position: absolute;
+  top: 4rem;
+  width: 100%;
+  height: 0.2rem;
+}
+
+.A::after{
+  right: 110%;
+  background: linear-gradient(90deg, rgba(20,214,154,0) 57%, var(--primary-green-clr) 100%);
+}
+
+.B::after{
+  left: 110%;
+  background: linear-gradient(260deg, rgba(20,214,154,0) 57%, var(--primary-green-clr) 100%);
+}
+
+.C::after{
+  right: 110%;
+  background: linear-gradient(90deg, rgba(20,214,154,0) 37%, var(--primary-green-clr) 100%);
+} 
+
+.D::after{
+  left: 110%;
+  background: linear-gradient(260deg, rgba(20,214,154,0) 37%, var(--primary-green-clr) 100%);
+}
+
+
+@media screen and (max-width: 1050px){
+
+  .A::before, .B::before, .C::before, .D::before{
+    display: none;
+  }
+
+  .A::after, .B::after, .C::after, .D::after{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 650px){
+
+  .main-container {
+    background: #000;
+  }
+
+  .game-container{
+    padding: 2rem 0 5rem;
+  }
+
+  #hud {
+    margin-bottom: 3rem;
+    padding: 1rem;
+  }
+
+  .hud-prefix {
+    font-size: 1.6rem;
+    letter-spacing: 0.2rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .timer{
+    font-size: 4rem;
+  }
+
+  #progressBar {
+    width: 18rem;
+  }
+
+  .hud-main-text{
+    font-size: 4rem;
+  }
+
+  .category{
+    margin-bottom: 0rem;
+  }
+
+  .ques{
+    width: 100%;
+    margin: 0 auto 0rem;
+    padding: 0 1rem;
+    font-size: 2.6rem;
+  }
+
+  .choice-top{
+    display: block;
+  }
+  
+  .chioce-bottom{
+    display: block; 
+  }
+  
+  .choice-container {
+    width: 90%;
+   
+  }
+}
+
+
+  
